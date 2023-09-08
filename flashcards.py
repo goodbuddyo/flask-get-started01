@@ -7,7 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return 'Welcome to my app'
+    return render_template(
+        'welcome.html',
+        message="Here's a message from the view")
 
 
 @app.route("/date")
