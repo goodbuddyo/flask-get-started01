@@ -10,7 +10,8 @@ app = Flask(__name__)
 def welcome():
     return render_template(
         'welcome.html',
-        message="Here's a message from the view!!")
+        message="Here's a message from the view!!",
+        cards=db)
 
 
 @app.route('/card/<int:index>')
