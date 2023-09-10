@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Remove Card</title>
-</head>
-<body>
-    <h1>Remove Flash Card</h1>
-    Question: {{ card.question }} <br>
-    Answer:   {{ card.answer }}
+{% extends "base.html" %}
 
-    <h2>Are you sure?</h2>
-    <form method="post">
-        <button type="submit">Yes</button>
-        <a href="{{ url_for('welcome') }}">No</a>
-    </form>
-</body>
-</html>
+{% block title %}Remove Card{% endblock %}
+
+{% block content %}
+<h1>Remove Flash Card</h1>
+<p class="q_a">
+  Question: {{ card.question }}
+</p>
+<p class="q_a">
+  Answer: {{ card.answer }}
+</p>
+
+<h2>Are you sure?</h2>
+<form method="post">
+  <button type="submit">Yes</button>
+  <a href="{{ url_for('welcome') }}">No</a>
+</form>
+{% endblock %}

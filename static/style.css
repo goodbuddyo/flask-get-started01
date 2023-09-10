@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    color: rgb(28, 83, 184);
+    background-color: rgb(219, 247, 252);
+}
+a, a:link {
+  color: rgb(2, 144, 134);
+  text-decoration: underline ;
+}
+a:visited {
+  color: rgba(4, 116, 122, 0.953);
+}
+a:hover {
+  color: rgb(28, 145, 104);
+}
+a:active {
+  color: rgb(50, 113, 239);
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+}
+p.q_a{
+  color: rgb(0, 0, 0);
+}

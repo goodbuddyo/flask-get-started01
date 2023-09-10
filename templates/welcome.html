@@ -1,44 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Welcome!</title>
-</head>
+{% block title %}Welcome{% endblock %}
 
-<body>
-  <h1>Welcome to my page!!</h1>
-  <p>
-    This is the demo application for the course
-    <em>Getting Started with Flask!!</em>
-    on <a href="https://www.pluralsight.com">Pluralsight</a>.
-  </p>
-  <!--<img src="/static/flasklogo.png">
-  <p>
-    {{message}}
-  </p>-->
-  <p>
+{% block content %}
+<h1>Welcome to my page!</h1>
+<p class="q_a">
+  This is the demo application for the course
+  <em>Getting Started with Flask</em>
+  on <a href="https://www.pluralsight.com">
+    Pluralsight</a>.
+</p>
 
-    <button>
-      <a href="{{ url_for('card_view', index=0) }}">
-        Cards
-      </a>
-    </button>
-  </p>
+<h2>Flash Cards</h2>
+<ul>
+  {% for card in cards %}
+  <li>
+    <a href="{{ url_for('card_view', index=loop.index0) }}">
+      {{ card.question }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
 
-  <h2>Flash Cards</h2>
-  <ul>
-    {% for card in cards %}
-    <li>
-      <a href="{{ url_for('card_view', index=loop.index0) }} ">
-        {{ card.question }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-
-
-
-</body>
-
-</html>
+<a href="{{ url_for('add_card') }}">Add a new card</a>
+{% endblock %}
